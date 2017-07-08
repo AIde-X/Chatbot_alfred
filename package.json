@@ -1,0 +1,23 @@
+{
+  "name": "alfred",
+  "version": "1.0.0",
+  "description": "personal assistant bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "facebook",
+    "messenger",
+    "bot",
+    "node",
+    "heroku"
+  ],
+  "author": "sagnik",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "request": "^2.81.0"
+  }
+}
