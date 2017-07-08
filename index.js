@@ -13,13 +13,15 @@ app.get('/', function(req, res){
     res.send('Hello Youtube!')
 })
 
-app.get('/webhook/', function(req, res){
-
-    if(req.query['hub.verify_token'] === 'sagnik'){
-          res.send(req.query['hub'])
-      }
-    res.send('No entry')
-})
+app.get("/webhook", function (req, res) {
+  if (req.query["hub.verify_token"] === "sagnik") {
+    console.log("Verified webhook");
+    res.status(200).send(req.query["hub.challenge"]);
+  } else {
+    console.error("Verification failed. The tokens do not match.");
+    res.sendStatus(403);
+  }
+});
 
 app.listen(app.get('port'),function(){
     console.log('running on port', app.get('port'))
